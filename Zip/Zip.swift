@@ -49,7 +49,7 @@ public enum ZipCompression: Int {
 }
 
 /// Zip class
-public class Zip {
+@objc public class Zip :NSObject {
     
     /**
      Set of vaild file extensions
@@ -63,9 +63,9 @@ public class Zip {
      
      - returns: Zip object
      */
-    public init () {
-    }
-    
+//     public init () {
+//    }
+//    
     // MARK: Unzip
     
     /**
@@ -166,8 +166,8 @@ public class Zip {
 
             let creationDate = Date()
 
-            let directoryAttributes = [FileAttributeKey.creationDate : creationDate,
-                                       FileAttributeKey.modificationDate : creationDate]
+            let directoryAttributes = [FileAttributeKey.creationDate.rawValue : creationDate,
+                                       FileAttributeKey.modificationDate.rawValue : creationDate]
 
             do {
                 if isDirectory {
